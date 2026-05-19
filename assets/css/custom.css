@@ -1,0 +1,14 @@
+
+.post-content {
+  max-width: 850px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+pre, code {
+  font-size: 0.9em;
+}
+

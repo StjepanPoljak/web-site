@@ -1,0 +1,17 @@
+baseURL = "https://poljak-engineering.com/"
+languageCode = "en-us"
+title = "Stjepan Poljak"
+theme = "PaperMod"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+customCSS = ["css/custom.css"]
+
+[[menu.main]]
+name = "Projects"
+url = "/projects/"
+weight = 1
