@@ -1,7 +1,6 @@
 +++
 title = 'About'
-date = 2026-05-18T20:53:21+02:00
-draft = true
+draft = false
 +++
 
 <img
