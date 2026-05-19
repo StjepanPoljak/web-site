@@ -8,10 +8,29 @@ theme = "PaperMod"
     [markup.goldmark.renderer]
       unsafe = true
 
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/StjepanPoljak"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/in/stjepan-poljak"
+
+[[params.socialIcons]]
+name = "email"
+url = "mailto:stjepan.poljak@protonmail.com"
+
 [params]
-customCSS = ["css/custom.css"]
+  hideFooter = true
+  [params.assets]
+    customCSS = ["css/custom.css"]
 
 [[menu.main]]
 name = "Projects"
 url = "/projects/"
 weight = 1
+
+[[menu.main]]
+name = "Contact"
+url = "/contact/"
+weight = 2
