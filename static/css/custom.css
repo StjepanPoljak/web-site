@@ -1,6 +1,5 @@
-.post-content {
-  max-width: 850px;
-  line-height: 1.6;
+:root {
+  --main-width: 900px;
 }
 
 h1, h2, h3 {

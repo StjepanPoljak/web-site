@@ -21,6 +21,8 @@ name = "email"
 url = "mailto:stjepan.poljak@protonmail.com"
 
 [params]
+  showBreadCrumbs = true
+  showToc = true
   hideFooter = true
   [params.assets]
     customCSS = ["css/custom.css"]
