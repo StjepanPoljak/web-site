@@ -1,5 +1,5 @@
 +++
-title = 'Tetris Console (PIC Assembly)'
+title = 'Embedded Tetris (PIC Assembly)'
 draft = false
 +++
 
@@ -22,6 +22,13 @@ custom display and control logic.
 - designed input handling via IR receiver
 - coordinated logic across two microcontrollers
 
+## Status
+
+Completed.
+
 ## GitHub
+
+The GitHub page contains schematics in PDF and code written in PIC assembly,
+along with photos and a video of the Tetris device.
 
 https://github.com/StjepanPoljak/TetrisDevice

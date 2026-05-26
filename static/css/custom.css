@@ -10,3 +10,33 @@ pre, code {
   font-size: 0.9em;
 }
 
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.project-card {
+  display: block;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: #999;
+}
+
+.project-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.project-desc {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
