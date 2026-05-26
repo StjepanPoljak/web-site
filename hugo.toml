@@ -21,6 +21,7 @@ name = "email"
 url = "mailto:stjepan.poljak@protonmail.com"
 
 [params]
+  mainSections = ["posts"]
   showBreadCrumbs = true
   showToc = true
   hideFooter = true
