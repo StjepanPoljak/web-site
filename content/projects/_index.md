@@ -52,6 +52,12 @@ _build:
 <div class="project-grid">
 
 {{< project-card
+  title="KVM Rust Experiment"
+  desc="Lightweight VM creation in Rust via KVM ioctls."
+  link="/projects/kvm-rust/"
+>}}
+
+{{< project-card
   title="6502 Emulator"
   desc="CPU instruction execution, memory mapping and low-level 6502 architecture exploration."
   link="/projects/sikso2/"
