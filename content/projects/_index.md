@@ -4,7 +4,7 @@ _build:
   list: never
 ---
 
-# Low-level Systems
+## Low-level Systems
 
 <div class="project-grid">
 
@@ -28,7 +28,7 @@ _build:
 
 </div>
 
-# Systems & Infrastructure
+## Systems & Infrastructure
 
 <div class="project-grid">
 
@@ -47,7 +47,7 @@ _build:
 </div>
 
 
-# Virtualization & Emulation
+## Virtualization & Emulation
 
 <div class="project-grid">
 
