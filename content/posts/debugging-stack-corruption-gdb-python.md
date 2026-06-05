@@ -4,6 +4,8 @@ date = 2026-05-23T19:52:31+02:00
 draft = false
 +++
 
+![Python GDB](/images/python-gdb.png)
+
 ## A bug in my operating system
 
 During a recent visit to my wife's family in Sarajevo, I decided to revisit my
