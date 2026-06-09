@@ -21,7 +21,7 @@ confident that the issue was stack corruption in my `print_memory_map` function.
 If I had an unmatched push or pop, it could have corrupted return addresses and
 eventually redirected execution flow into invalid memory. Single-stepping
 through the routine manually quickly became impractical. The function mixed BIOS
-interrupt handling, memory map parsing, and multiple helper calls, making it
+interrupt handling, memory map parsing and multiple helper calls, making it
 difficult to reason about stack state over time.
 
 ## Setting up GDB scripting in Python
@@ -73,7 +73,7 @@ use any in my code anyway and logic would be a bit more complex).
 Now what we need to do is start single-stepping after we hit our breakpoint. So
 we add a while loop with `gdb.execute("stepi")` after `gdb.execute("continue")`.
 Note that the `stepi` instruction steps over machine instructions, not over
-source code statements. Also note that We cannot start single-stepping in
+source code statements. Also note that we cannot start single-stepping in
 `stop()` method because GDB won't be in a state which can accept these kinds of
 debugging requests.
 
@@ -81,7 +81,7 @@ debugging requests.
 
 Furthermore I have wrapped this single-stepping logic in `trace_step()` method
 in our breakpoint class. This method is not part of GDB breakpoint API, but
-rather as a convenience for tracking the number of pushes and pops in a
+rather just a convenience for tracking the number of pushes and pops in a
 consistent manner. To run this script we need to call:
 
 ```sh
