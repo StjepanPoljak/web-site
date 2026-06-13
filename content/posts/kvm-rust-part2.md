@@ -3,6 +3,8 @@ title = 'Building a KVM Virtual Machine in Rust: Memory Setup'
 date = 2026-06-09T17:30:10+02:00
 +++
 
+![Memory Diagram](/images/kvm-rust-part2.drawio.svg)
+
 ## Recap
 
 This is a continuation of my [previous article](../kvm-rust-part1) which dealt
