@@ -335,24 +335,30 @@ Then, when we call `KVM_RUN` we simply match the exit reasons and act
 accordingly:
 
 ```rs
-loop {
-	unsafe { libc::ioctl(vcpu_fd, KVM_RUN, 0usize) };
-	let run = unsafe { *(kvm_run_mem as *mut kvm_run) };
+let run = vcpu.kvm_run_mem as *mut kvm_run;
 
-	match run.exit_reason {
-		KVM_EXIT_MMIO => { /* omitted */ }
-		KVM_EXIT_HLT => {
-			println!("Guest halted.");
-			break; }
-		KVM_EXIT_SHUTDOWN => {
-			println!("Guest shutdown.");
-			break; }
-		KVM_EXIT_INTERNAL_ERROR => {
-			return Err(io::Error::other("KVM internal error.")); }
-		_ => {
-			println!("EXIT REASON = {}", run.exit_reason);
-		}
-	}
+loop {
+    let ret = unsafe { libc::ioctl(vcpu.fd, KVM_RUN, 0usize) };
+    if ret < 0 {
+        return Err(io::Error::last_os_error());
+    }
+
+    let exit_reason = unsafe { (*run).exit_reason };
+
+    match exit_reason {
+        KVM_EXIT_MMIO => { /* omitted */ }
+        KVM_EXIT_HLT => {
+            println!("Guest halted.");
+            break; }
+        KVM_EXIT_SHUTDOWN => {
+            println!("Guest shutdown.");
+            break; }
+        KVM_EXIT_INTERNAL_ERROR => {
+            return Err(io::Error::other("KVM internal error.")); }
+        _ => {
+            println!("EXIT REASON = {}", exit_reason);
+        }
+    }
 }
 ```
 
