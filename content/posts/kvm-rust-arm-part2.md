@@ -1,7 +1,6 @@
 +++
 title = 'Porting my Rust KVM hypervisor to ARM64: Running the binary'
 date = 2026-07-09T19:30:54+02:00
-draft = true
 +++
 
 ![Successful binary run](/images/kvm-rust-arm-part2.png)
@@ -265,3 +264,7 @@ single register structure, requires explicit vCPU initialization through
 could successfully execute guest code. Fortunately, the same workflow that
 worked on x86 like combining strace, GDB and the Linux kernel source proved just
 as effective on ARM64 (although required a bit more effort).
+
+The code from this article can be found on my GitHub page:
+
+https://github.com/StjepanPoljak/kvm-rust/tree/kvm-arm-part2-code
