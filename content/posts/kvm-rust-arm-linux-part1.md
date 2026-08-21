@@ -1,7 +1,7 @@
 +++
 title = 'Booting ARM64 Linux in my Rust KVM Hypervisor: Debugging a Memory Issue'
 date = 2026-07-13T16:57:18+02:00
-draft = true
+draft = false
 +++
 
 ![Function not implemented error](/images/kvm-rust-arm-linux-part1.png)
@@ -225,15 +225,3 @@ With that adjustment, the `ENOSYS` error disappeared. The guest was clearly
 executing code, although I still wasn't seeing any output on the serial console.
 That meant the memory issue was solved, but there was at least one more thing
 left before we would actually see Linux boot.
-
-
-
-
-
-### UART
-
- For now we want to decompile it and see what's inside:
-
-```sh
-dtc -I dtb -O dts -o virt.dts virt.dtb
-```
