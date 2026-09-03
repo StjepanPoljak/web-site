@@ -22,11 +22,12 @@ instrumentation, performance optimization and ensuring reliability of
 production-grade systems.
 
 Led CVE remediation workflows, designed and maintained secure Linux platforms,
-including synchronization and debugging mechanisms in kernel­adjacent systems.
-Proficient in C/C++ and Python for systems tooling and infrastructure automation.
+including synchronization and debugging mechanisms in kernel-adjacent systems.
+Proficient in C/C++, Rust and Python for systems-level programming, tooling and
+infrastructure automation.
 
-Interested in platform security, Linux infrastructure, virtualization and
-systems engineering roles.
+Interested in platform security, Linux, virtualization and systems engineering
+roles.
 
 ## Core Expertise
 <div style="columns: 2;">
@@ -36,7 +37,7 @@ systems engineering roles.
 <li>Linux Kernel Internals</li>
 <li>Virtualization (QEMU/KVM)</li>
 <li>Distributed Systems Debugging</li>
-<li>Kernel Instrumentation (kprobes, ftrace)</li>
+<li>Kernel Instrumentation (kprobes, ftrace, eBPF)</li>
 </ul>
 
 <ul>
