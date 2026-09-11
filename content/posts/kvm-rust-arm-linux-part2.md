@@ -1,10 +1,17 @@
 +++
 title = 'Booting ARM64 Linux in my Rust KVM Hypervisor: Getting to the console with help of eBPF'
-date = 2026-09-11T18:42:32+02:00
-draft = true
+date = 2026-09-11T18:12:32+02:00
+draft = false
 +++
 
+<p align="center">
+  <video autoplay muted loop playsinline style="max-width: 100%; height: auto;">
+    <source src="/videos/linkedin-kvm-rust-arm-linux-part2.webm" type="video/webm">
+  </video>
+</p>
+
 ## Recap
+
 In the [previous article](../kvm-rust-arm-linux-part1) I got ARM64 Linux as far
 as executing inside my Rust KVM hypervisor. I still couldn't actually interact
 with the guest, though: I had no working console.
