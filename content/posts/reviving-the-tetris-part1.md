@@ -37,12 +37,16 @@ already outdated.
 ### Hardware prototype
 
 The first hardware prototype ended up in the trash. I was still learning to
-vsolder and it showed.
+solder and it showed.
 
 The second prototype turned out much better. I bought a more capable PIC MCU
 for it, the PIC16F876, and designed the board so it could be expanded later. I
 left pin headers connected to unused PIC pins, allowing additional components
 to be added as the project evolved.
+
+<p align="center">
+  <img src="https://github.com/StjepanPoljak/TetrisDevice/blob/master/TetrisFoto.jpg?raw=true" alt="The original Tetris console">
+</p>
 
 ## Programming
 
@@ -104,6 +108,10 @@ The controller became the input device for my Tetris machine, while a separate
 P12 MCU handled the incoming signals and connected to the remaining pins of the
 main system.
 
+<p align="center">
+  <img src="https://github.com/StjepanPoljak/TetrisDevice/blob/master/ReceiverFoto.jpg?raw=true" alt="PIC12 Remote Module">
+</p>
+
 ## The result
 
 The end result was a fully playable physical Tetris game as can be seen in the
@@ -122,7 +130,10 @@ Eventually, the console stopped working altogether.
 By then, I no longer had the proper programmer or debugging equipment, so
 bringing it back to life wasn't particularly practical.
 
-But two things survived: the code and the schematics.
+But two things survived: the code and the schematics. They can be found on the
+following GitHub page:
+
+https://github.com/StjepanPoljak/TetrisDevice/
 
 And fifteen years later, I had an idea: instead of trying to repair the
 original hardware, why not revive the project by running the original code in
