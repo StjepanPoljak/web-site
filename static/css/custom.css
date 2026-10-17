@@ -44,3 +44,17 @@ pre, code {
   font-size: 0.9em;
   opacity: 0.8;
 }
+
+/* Mermaid diagrams: drop PaperMod's code-block styling. */
+.post-content pre.mermaid {
+  background: none;
+  padding: 0;
+  border: none;
+  text-align: center;
+  font-family: inherit;
+  overflow-x: auto;
+}
+
+.post-content pre.mermaid:not([data-processed]) {
+  visibility: hidden;
+}
