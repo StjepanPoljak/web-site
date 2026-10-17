@@ -11,14 +11,14 @@
       text: '#1f1f1f', muted: '#6c6c6c', note: '#f5f5f5', noteBorder: '#d6d6d6',
     },
     dark: {
-      bg: '#1d1e20', fill: '#2e2e33', border: '#414244',
-      text: '#dadadb', muted: '#9b9c9d', note: '#37383e', noteBorder: '#414244',
+      bg: '#1d1e20', fill: '#182e44', border: '#2f5577',
+      text: '#dadadb', muted: '#9b9c9d', note: '#182e44', noteBorder: '#2f5577',
     },
   };
 
   const themeVariables = (p) => ({
     darkMode: p === palettes.dark,
-    fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
+    fontFamily: '"Courier New", Courier, "Liberation Mono", monospace',
     fontSize: '14px',
     background: p.bg,
     mainBkg: p.fill,
@@ -68,6 +68,7 @@
       theme: 'base',
       themeVariables: themeVariables(dark ? palettes.dark : palettes.light),
       sequence: { mirrorActors: false },
+      flowchart: { wrappingWidth: 400, nodeSpacing: 24, subGraphTitleMargin: { top: 8, bottom: 12 } },
     });
     nodes.forEach((n) => {
       n.removeAttribute('data-processed');
@@ -75,7 +76,31 @@
     });
     await mermaid.run({ nodes });
     nodes.forEach(alignRects);
+    nodes.forEach(extendLifelines);
+    nodes.forEach(leftAlignClusterTitles);
     nodes.forEach(addComments);
+  }
+
+  /* Without mirrored actors Mermaid can stop lifelines short; run them to the last message or rect. */
+  function extendLifelines(n) {
+    const lifelines = n.querySelectorAll('svg line.actor-line');
+    const items = [...n.querySelectorAll('svg .messageLine0, svg .messageLine1, svg rect.rect')];
+    if (!lifelines.length || !items.length) return;
+    const bottom = Math.max(...items.map((el) => { const b = el.getBBox(); return b.y + b.height; }));
+    lifelines.forEach((l) => {
+      if (l.y2.baseVal.value < bottom) l.setAttribute('y2', bottom);
+    });
+  }
+
+  /* Subgraph titles read like struct names, so put them top-left instead of centred. */
+  function leftAlignClusterTitles(n) {
+    n.querySelectorAll('svg g.cluster').forEach((g) => {
+      const rect = g.querySelector(':scope > rect');
+      const label = g.querySelector(':scope > g.cluster-label');
+      const m = label?.getAttribute('transform')?.match(/translate\(\s*([-\d.]+)[ ,]+([-\d.]+)/);
+      if (!rect || !m) return;
+      label.setAttribute('transform', `translate(${rect.x.baseVal.value + 10}, ${m[2]})`);
+    });
   }
 
   /*

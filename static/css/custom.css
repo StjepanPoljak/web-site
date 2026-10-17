@@ -58,3 +58,21 @@ pre, code {
 .post-content pre.mermaid:not([data-processed]) {
   visibility: hidden;
 }
+
+/* Container blocks marked `class ... group` in a diagram (dark mode only). */
+:root[data-theme="dark"] pre.mermaid .group > rect {
+  fill: #363636 !important;
+}
+
+/* Edge labels take the colour of the container they sit on, hiding the line behind them. */
+pre.mermaid .edgeLabel,
+pre.mermaid .edgeLabel p,
+pre.mermaid .labelBkg {
+  background-color: var(--theme) !important;
+}
+
+:root[data-theme="dark"] pre.mermaid .edgeLabel,
+:root[data-theme="dark"] pre.mermaid .edgeLabel p,
+:root[data-theme="dark"] pre.mermaid .labelBkg {
+  background-color: #363636 !important;
+}
