@@ -20,7 +20,7 @@ this kind of thing I almost always use docker. So I have written a simple
 `Dockerfile` installing the cross-compilation toolchain for 64-bit ARM along
 with Rust essentials:
 
-https://github.com/StjepanPoljak/kvm-rust/blob/kvm-arm-code/Dockerfile
+https://github.com/StjepanPoljak/hearth/blob/kvm-arm-code/Dockerfile
 
 Building this image is straightforward, but it does require passing user and
 group id to have the resulting file permissions correct:
@@ -188,4 +188,4 @@ crucial step in KVM ARM setup.
 The code showcasing creation of register `id`s in a `HashMap` and subsequent
 error when calling `KVM_SET_ONE_REG` can be found on my GitHub page:
 
-https://github.com/StjepanPoljak/kvm-rust/tree/kvm-arm-part1-code
+https://github.com/StjepanPoljak/hearth/tree/kvm-arm-part1-code

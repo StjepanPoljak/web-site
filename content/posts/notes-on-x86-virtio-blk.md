@@ -391,6 +391,6 @@ the code and explore other Virtio devices to extend the functionality of my VMM.
 
 The implementation details can be found on my KVM Rust GitHub repo:
 
-https://github.com/StjepanPoljak/kvm-rust
+https://github.com/StjepanPoljak/hearth
 
 Note that Virtio-MMIO Block code is implemented only for x86 for now.

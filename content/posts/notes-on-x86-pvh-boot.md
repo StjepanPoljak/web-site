@@ -211,6 +211,6 @@ starting point than reproducing the complete BIOS boot sequence first.
 The implementation is available in the x86 initialization code in my `kvm-rust`
 repository:
 
-https://github.com/StjepanPoljak/kvm-rust/blob/main/src/arch/x86_64/init.rs
+https://github.com/StjepanPoljak/hearth/blob/main/src/arch/x86_64/init.rs
 
 I plan to continue extending functionality of the x86 side of my VMM.

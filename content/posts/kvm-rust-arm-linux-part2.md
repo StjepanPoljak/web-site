@@ -460,4 +460,4 @@ useful ARM64 virtual machine.
 You can also check out the repository on my GitHub page and, if you have a
 Raspberry Pi 4B, try the VMM yourself:
 
-https://github.com/StjepanPoljak/kvm-rust
+https://github.com/StjepanPoljak/hearth

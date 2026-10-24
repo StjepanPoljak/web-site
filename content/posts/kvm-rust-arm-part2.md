@@ -267,4 +267,4 @@ as effective on ARM64 (although required a bit more effort).
 
 The code from this article can be found on my GitHub page:
 
-https://github.com/StjepanPoljak/kvm-rust/tree/kvm-arm-part2-code
+https://github.com/StjepanPoljak/hearth/tree/kvm-arm-part2-code

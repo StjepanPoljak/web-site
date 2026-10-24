@@ -23,4 +23,4 @@ Experimental.
 
 ## GitHub
 
-https://github.com/StjepanPoljak/kvm-rust
+https://github.com/StjepanPoljak/hearth
