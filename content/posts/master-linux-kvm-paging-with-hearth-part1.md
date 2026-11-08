@@ -26,10 +26,20 @@ a value to address `0x200000`.
 The program is compiled as an ELF file with a Xen PVH note, allowing us to reuse
 our existing Linux [PVH boot](../notes-on-x86-pvh-boot) code. Recall that PVH
 boot starts us in 32-bit protected mode. From there, we can set up our own
-identity-mapped page tables and have a controlled environment to experiment with
-memory translation.
+page tables and have a controlled environment to experiment with memory
+translation.
 
-The code for Touch is available in my GitHub repository:
+Note that we have identity-mapped first 2 MiB with a single page mapped to
+0x100000000 (4 GiB offset):
+
+| Guest physical          | Guest virtual                 | Size             |
+|-------------------------|-------------------------------|------------------|
+| `0x0` – `0x1FFFFF`      | `0x0` – `0x1FFFFF`            | 2 MiB (identity) |
+| `0x200000` – `0x200FFF` | `0x100000000` – `0x100000FFF` | 4 KiB            |
+
+We did this so we can see the difference in what the trace will report.
+
+Complete code for Touch is available in my GitHub repository:
 
 https://github.com/StjepanPoljak/Hearth/blob/main/guests/touch
 
@@ -216,24 +226,18 @@ more elaborate BPF program for bpftrace:
 ```bpftrace
 #!/usr/bin/env bpftrace
 
-tracepoint:kvm:kvm_page_fault
-{
+tracepoint:kvm:kvm_page_fault {
         @in_kvm[tid] = args->fault_address;
 }
 
-fentry:handle_mm_fault
-/@in_kvm[tid]/
-{
+fentry:handle_mm_fault /@in_kvm[tid]/ {
         printf("HVA=0x%lx GPA=0x%llx\r\n",
                args->address, @in_kvm[tid] );
         printf("%s\r\n", kstack);
         delete(@in_kvm[tid]);
 }
 
-END
-{
-        clear(@in_kvm);
-}
+END { clear(@in_kvm); }
 ```
 
 Whenever we go into `kvm_page_fault` it will remember GPA via `fault_address`
