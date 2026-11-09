@@ -1,8 +1,9 @@
 +++
 title = 'How MIDICollider Led to an Upstream Linux Kernel Patch'
 date = 2026-11-04T17:20:49+01:00
-draft = true
 +++
+
+![MIDICollider in Linux](/images/midicollider-kernel.png)
 
 ## Introduction
 
@@ -31,8 +32,9 @@ gives `ENODEV`), it closes the device and releases every held note.
 
 ## The bug
 
-I had a problem both on my laptop and on the Raspberry Pi when I switched my
-USB MIDI keyboard off and on - the laptop and the Pi would be stuck. No sound.
+I had a problem on both my laptop and the Raspberry Pi: whenever I switched my
+USB MIDI keyboard off and on, MIDI input stopped working. No sound.
+
 Really bad, especially as I have two toddlers, and they just love pressing
 random buttons on the keyboard.
 
@@ -68,9 +70,8 @@ days to find out.
 
 ### Brainstorming
 
-That is what AI discovered. And what AI has proposed as a solution was to read
-`/dev/kmsg` and try and spot the `urb status` logs and re-enumerate the device
-via `/sys/bus/usb/devices/<port>/authorized`.
+That was AI's diagnosis. Its proposed solution was to read `/dev/kmsg`, look for
+the `urb` status messages, and re-enumerate the device via `/sys/bus/usb/devices/<port>/authorized.`
 
 Well, I've been in this industry quite a while and there were two problems with
 this: performance and no guarantee that the message will remain the same (or
@@ -225,9 +226,9 @@ one that kept going.
 The log loop again: each failure goes through `dev_err()`, at a loglevel
 that's printed to every console. On this Pi that's the HDMI text console,
 which draws and scrolls in software, and a 115200-baud serial port. Printing
-is slow, which is why the loop ran at exactly one line every 4 ms. And on the
-Pi 3 all hardware interrupts are handled by CPU 0: USB, the SD card, the
-hub's status changes.
+is slow, which is why the loop ran at exactly one line every 4 ms.
+
+And in this setup, all hardware interrupts were being handled by CPU 0.
 
 So the test: unpatched kernel, normal `dwc_otg`, and `loglevel=3` on the
 kernel command line. The messages still go into the kernel log, which init
@@ -285,13 +286,35 @@ wasn't: PipeWire 1.6.2's ALSA sequencer bridge doesn't remove a destroyed port
 from a list, and after the reconnect its data thread spun at 100 % CPU in
 `process_recycle()`. The stack trace led to upstream commit `47425371`
 ("alsa-seq: remove port from `mix_list` on destroy"), which is in 1.6.4, but
-not in Ubuntu's package, but this is the story for another time.
+not in Ubuntu's package. This, however, is the story for another time.
+
+## Upstream
+
+The patch made it into Linux 7.4-rc2, as part of the sound subsystem updates.
+
+There were two patch series along the way:
+
+- [First patch series — 26 October 2026](https://lore.kernel.org/linux-sound/20261026125751.1700779-1-stjepan.poljak@gmail.com/) (revised on 27 October)
+- [Replacement patch — 29 October 2026](https://lore.kernel.org/linux-sound/20261029165701.2004391-1-stjepan.poljak@gmail.com/)
+
+The second submission replaced the original recovery approach with the much
+simpler fix: classify `-EPIPE` as an error that can occur during unplugging, and
+let the existing retry mechanism handle it.
+
+The final patch is titled **ALSA: usb-audio: don't resubmit MIDI URBs at once on
+-EPIPE**.
 
 ## Final thoughts
 
-I got my patch accepted in the Linux kernel, and it all started with a minor
-annoyance: USB-driven MIDI keyboard misbehaving after being turned off and on
-again. AI has proposed a userspace workaround which I didn't really like and
-decided to pursue the bug in the Linux kernel. So, always ask yourself: which
-layer of your software stack is the one that needs to be fixed. Sometimes that
-is userspace. Sometime that is kernel space.
+The fix has now made it into Linux 7.4-rc2. What started as a minor annoyance
+with a USB MIDI keyboard being switched off and on again ended up as my first
+upstream Linux kernel fix.
+
+The original patch went through two submissions. The first attempt explored a
+more complicated recovery mechanism, while the second took a much simpler
+approach: treat `-EPIPE` like the other errors that can occur during unplugging
+and let the existing retry mechanism do its job.
+
+Link to MIDICollider GitHub repository:
+
+https://github.com/StjepanPoljak/MIDICollider
