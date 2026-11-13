@@ -37,6 +37,8 @@ for experimenting with computer architectures.
 - displays served over VNC, signals traced to VCD
 - 23LC1024 SPI SRAM, the first step towards external memory with the PIC's
   own RAM as a cache
+- a PIC16F876 running a 260K-parameter language model from three SPI
+  EEPROMs, writing stories on the LCD
 
 ## Status
 
