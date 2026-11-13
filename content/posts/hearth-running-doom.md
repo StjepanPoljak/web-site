@@ -372,7 +372,7 @@ guest code efficiently.
 
 Link to the GitHub repository:
 
-https://github.com/StjepanPoljak/hearth
+https://github.com/StjepanPoljak/Hearth
 
 ## Try Doom yourself
 

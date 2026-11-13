@@ -201,7 +201,7 @@ We can see our output is fine and no errors were reported. Note that a full
 working example with proper checking and Rust idiomatic approaches can be found
 on my GitHub page:
 
-https://github.com/StjepanPoljak/hearth/tree/kvm-part2-code
+https://github.com/StjepanPoljak/Hearth/tree/kvm-part2-code
 
 ### Next steps
 

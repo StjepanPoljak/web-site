@@ -170,6 +170,6 @@ experimentation with various architectures.
 
 Links to the emulator and Tetris device repositories:
 
-https://github.com/StjepanPoljak/rupic
+https://github.com/StjepanPoljak/Emularium
 
 https://github.com/StjepanPoljak/TetrisDevice/

@@ -17,7 +17,7 @@ Now, we have only set up a memory region, but we still haven't loaded any binary
 or code to actually run. For this, I have written a small "Hello world" x86
 assembly file: 
 
-https://github.com/StjepanPoljak/hearth/blob/kvm-part3-code/samples/hello-world.asm
+https://github.com/StjepanPoljak/Hearth/blob/kvm-part3-code/samples/hello-world.asm
 
 Notice that the `org 0x1000` header is quite arbitrary and it's actually a good
 lead of what we also need to do (set the instruction pointer). Let's compile the
@@ -391,4 +391,4 @@ reimplementing it in Rust. A lot of next steps actually come down to x86
 architecture and bootloader specifics, so we may leave it here for now. The full
 code capable of running simple binaries can be found on GitHub:
 
-https://github.com/StjepanPoljak/hearth/tree/kvm-part3-code
+https://github.com/StjepanPoljak/Hearth/tree/kvm-part3-code

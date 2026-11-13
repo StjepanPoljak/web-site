@@ -314,7 +314,7 @@ As Doom failed to produce meaningful results, I designed a benchmark that will
 do something a bit more heavy with paging: forks, execs and context switches.
 The source code is available on:
 
-https://github.com/StjepanPoljak/hearth/blob/main/guests/paging-bench/bench.c
+https://github.com/StjepanPoljak/Hearth/blob/main/guests/paging-bench/bench.c
 
 The results:
 

@@ -34,15 +34,15 @@ _build:
 <div class="project-grid">
 
 {{< project-card
-  title="KVM Rust Experiment"
-  desc="VM creation in Rust via KVM ioctls. Able to boot Linux on ARM64."
-  link="/projects/kvm-rust/"
+  title="Hearth: KVM Virtual Machine Monitor"
+  desc="VMM in Rust on KVM. Boots Linux on x86_64, aarch64 and riscv64, and runs Doom."
+  link="/projects/hearth/"
 >}}
 
 {{< project-card
-  title="Rupic: Embedded Tetris PIC Emulator"
-  desc="PIC16F876 instruction execution and architecture for Tetris project."
-  link="/projects/rupic/"
+  title="Emularium: Board Emulator"
+  desc="Runs whole boards from KiCad schematics: PIC16F876, LCD, keypad and SPI RAM."
+  link="/projects/emularium/"
 >}}
 
 </div>
