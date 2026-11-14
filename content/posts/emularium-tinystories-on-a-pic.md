@@ -170,6 +170,27 @@ It's charmingly incoherent, as a model with 260 thousand parameters
 should be. But every word of it was computed by an 8-bit microcontroller
 designed in the 1990s, with 368 bytes of RAM.
 
+## Related work
+
+stories260K has been run on 32-bit microcontrollers many times, for
+example on the [ESP32-S3](https://github.com/Riteshbstkr/esp32-llm-n16r8)
+and the [STM32H7](https://github.com/schuhandreas/embedllama-stm32h7a3),
+which have hundreds of kilobytes of RAM. On 8-bit machines, the closest
+projects I found are:
+
+- [ternary.c64](https://github.com/demartinogiuseppe/ternary.c64): a
+  Llama-style model with 688K ternary weights on a Commodore 64,
+  bit-exact against a C reference, so far only in an emulator;
+- [Soul Player C64](https://github.com/gizmo64k/soulplayer-c64): a
+  25K-parameter transformer on a Commodore 64;
+- [bitnet-6502](https://mattbeton.com/blog/bitnet-6502.html): a ternary
+  recurrent model running on a real BBC Micro.
+
+Emularium's chip is smaller: 368 bytes of RAM against the 6502 machines'
+32-64 KB. It also runs Karpathy's original trained model, quantized after
+training, rather than one trained for ternary weights. I couldn't find
+another language model running on a PIC16.
+
 ## How it was built
 
 True to my plan, I didn't write this code. I wrote the goal and the
