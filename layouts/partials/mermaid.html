@@ -4,15 +4,15 @@
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs';
 
-  /* Colors mirror PaperMod's theme-vars.css so diagrams blend with the page. */
+  /* Colours chosen to sit on the Blowfish "slate" scheme (light and dark). */
   const palettes = {
     light: {
-      bg: '#ffffff', fill: '#f5f5f5', border: '#d6d6d6',
-      text: '#1f1f1f', muted: '#6c6c6c', note: '#f5f5f5', noteBorder: '#d6d6d6',
+      bg: '#ffffff', fill: '#f1f5f9', border: '#cbd5e1',
+      text: '#1f2937', muted: '#6b7280', note: '#f1f5f9', noteBorder: '#cbd5e1',
     },
     dark: {
-      bg: '#1d1e20', fill: '#182e44', border: '#2f5577',
-      text: '#dadadb', muted: '#9b9c9d', note: '#182e44', noteBorder: '#2f5577',
+      bg: '#1f2937', fill: '#334155', border: '#475569',
+      text: '#e5e7eb', muted: '#9ca3af', note: '#334155', noteBorder: '#475569',
     },
   };
 
@@ -56,7 +56,7 @@
   const nodes = [...document.querySelectorAll('pre.mermaid')];
   nodes.forEach((n) => (n.dataset.source = n.textContent));
 
-  const isDark = () => document.documentElement.dataset.theme === 'dark';
+  const isDark = () => document.documentElement.classList.contains('dark');
   let rendered = null;
 
   async function render() {
@@ -182,7 +182,7 @@
   }
 
   render();
-  /* PaperMod's theme toggle flips data-theme on <html>. */
-  new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  /* Blowfish's appearance switcher toggles the `dark` class on <html>. */
+  new MutationObserver(render).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 </script>
 {{- end }}

@@ -1,6 +1,11 @@
 +++
 title = 'Learning KVM by Reverse-Engineering QEMU with strace'
 date = 2026-06-05T20:14:58+02:00
+series = ["Hearth"]
+series_order = 1
+tags = ["KVM", "QEMU", "strace", "x86"]
+featureimage = "images/kvm-rust-part1.png"
+summary = "Tracing QEMU with strace to learn which KVM ioctls it takes to create and run a virtual machine."
 +++
 
 ![KVM trace](/images/kvm-rust-part1.png)

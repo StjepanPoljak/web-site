@@ -1,0 +1,216 @@
+/* Site-specific styles on top of Blowfish (loaded automatically from assets/css/custom.css). */
+
+/* ---- Projects page ---------------------------------------------------- */
+
+.project-section-title {
+  margin: 3rem 0 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.project-featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-feature {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgb(var(--color-neutral-300));
+  border-radius: 0.75rem;
+  background: rgb(var(--color-neutral));
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.project-feature:hover {
+  transform: translateY(-3px);
+  border-color: rgb(var(--color-primary-400));
+  box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.25);
+}
+.project-feature-image {
+  display: block;
+  aspect-ratio: 2 / 1;
+  background: rgb(var(--color-neutral-100));
+}
+.project-feature-image img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+  object-position: top; /* keep the logo lettering in view */
+}
+.project-feature-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+.project-feature-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none !important;
+  color: rgb(var(--color-neutral-900));
+}
+.project-feature-desc {
+  margin: 0;
+  color: rgb(var(--color-neutral-600));
+}
+.project-feature-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+.project-feature-links a {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgb(var(--color-primary-300));
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: rgb(var(--color-primary-700));
+}
+.project-feature-links a:hover {
+  background: rgb(var(--color-primary-100));
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.project-card {
+  display: block;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgb(var(--color-neutral-300));
+  border-radius: 0.6rem;
+  text-decoration: none !important;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: rgb(var(--color-primary-400));
+}
+.project-title {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: rgb(var(--color-neutral-900));
+}
+.project-desc {
+  font-size: 0.9em;
+  color: rgb(var(--color-neutral-600));
+}
+.project-meta {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgb(var(--color-primary-500));
+}
+
+html.dark .project-feature {
+  border-color: rgb(var(--color-neutral-600));
+  background: rgb(var(--color-neutral-800));
+}
+html.dark .project-feature-image { background: rgb(var(--color-neutral-700)); }
+html.dark .project-feature-title,
+html.dark .project-title { color: rgb(var(--color-neutral-100)); }
+html.dark .project-feature-desc,
+html.dark .project-desc { color: rgb(var(--color-neutral-400)); }
+html.dark .project-feature-links a {
+  border-color: rgb(var(--color-primary-600));
+  color: rgb(var(--color-primary-300));
+}
+html.dark .project-feature-links a:hover { background: rgb(var(--color-primary-800)); }
+html.dark .project-card { border-color: rgb(var(--color-neutral-600)); }
+html.dark .project-meta { color: rgb(var(--color-primary-400)); }
+
+/* ---- "Part N" label on series landing pages -------------------------- */
+
+.series-part-num {
+  margin-bottom: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgb(var(--color-primary-500));
+}
+html.dark .series-part-num { color: rgb(var(--color-primary-400)); }
+
+/* ---- Mermaid diagrams (see layouts/partials/mermaid.html) ------------- */
+
+.prose pre.mermaid {
+  background: none;
+  padding: 0;
+  border: none;
+  text-align: center;
+  font-family: inherit;
+  overflow-x: auto;
+}
+pre.mermaid:not([data-processed]) {
+  visibility: hidden;
+}
+
+/* Container blocks marked `class ... group` in a diagram (dark mode only). */
+html.dark pre.mermaid .group > rect {
+  fill: #374151 !important;
+}
+
+/* Edge labels take the colour of the container they sit on, hiding the line behind them. */
+pre.mermaid .edgeLabel,
+pre.mermaid .edgeLabel p,
+pre.mermaid .labelBkg {
+  background-color: #ffffff !important;
+}
+html.dark pre.mermaid .edgeLabel,
+html.dark pre.mermaid .edgeLabel p,
+html.dark pre.mermaid .labelBkg {
+  background-color: #374151 !important;
+}
+
+/* ---- Home page ---------------------------------------------------------- */
+
+.expertise-columns ul { columns: 2; column-gap: 2rem; }
+.expertise-columns li { break-inside: avoid; margin: 0 0 0.6em; }
+@media (max-width: 640px) { .expertise-columns ul { columns: 1; } }
+
+/* Blowfish's profile home centres everything; keep the bio and lists readable. */
+article.text-center > section.prose { text-align: left; }
+article.text-center > section.prose h2 { margin-top: 2.5rem; }
+article.text-center > header { margin-bottom: 2rem; }
+
+/* ---- Series landing pages ------------------------------------------- */
+
+.series-arc-title { margin: 3rem 0 0.25rem; font-size: 1.5rem; font-weight: 700; }
+.series-arc-desc { margin: 0 0 1.5rem; color: rgb(var(--color-neutral-500)); }
+html.dark .series-arc-desc { color: rgb(var(--color-neutral-400)); }
+
+.series-reading-list li { margin: 0.35rem 0; }
+.series-reading-date {
+  margin-left: 0.4rem;
+  white-space: nowrap;
+  font-size: 0.85em;
+  color: rgb(var(--color-neutral-500));
+}
+
+/* ---- Wider reading column ------------------------------------------- */
+/* Blowfish defaults: 80rem page, 8rem side padding, 65ch text. Aim for
+   roughly the 900px column the PaperMod site used. */
+
+:root { --container-7xl: 88rem; }
+
+@media (min-width: 64rem) {
+  body.max-w-7xl { padding-left: 4rem; padding-right: 4rem; }
+  /* The fixed header has its own copy of the body's padding classes. */
+  #menu-blur + div.max-w-7xl { padding-left: 4rem; padding-right: 4rem; }
+}
+
+/* Only the text column: the outer article section (text + TOC) must stay max-w-full. */
+.max-w-prose { max-width: 56rem; }
+/* Home page bio (Blowfish profile layout uses a bare .prose block). */
+article.text-center > section.prose { max-width: 56rem; }

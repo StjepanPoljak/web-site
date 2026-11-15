@@ -2,6 +2,11 @@
 title = 'Summertime fun: Reviving the Tetris, Part II'
 date = 2026-10-10T13:52:03+02:00
 draft = false
+series = ["Emularium"]
+series_order = 2
+tags = ["PIC16F876", "Rust", "Emulation", "AI Agents"]
+featureimage = "images/emularium.png"
+summary = "Reviving the Tetris firmware in a PIC16F876 emulator written in Rust, with a test harness and an AI agent."
 +++
 
 <script src="https://asciinema.org/a/kUsbEpFopGwdiypI.js" id="asciicast-kUsbEpFopGwdiypI" async></script>

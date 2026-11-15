@@ -2,6 +2,11 @@
 title = 'Reverse-Engineering NVIDIA: Modifying a CUDA binary'
 date = 2026-09-05T18:42:28+02:00
 draft = false
+series = ["NVIDIA"]
+series_order = 1
+tags = ["CUDA", "Reverse Engineering", "SASS"]
+featureimage = "images/nvidia-reverse1.png"
+summary = "Decoding GPU machine code by patching a value in a simple CUDA binary and watching what changes."
 +++
 
 ![Modifying CUDA binary](/images/nvidia-reverse1.png)

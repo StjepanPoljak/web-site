@@ -1,7 +1,11 @@
 {{ define "main" }}
-
-<article class="post-content">
-  {{ .Content }}
-</article>
-
+  <header class="mt-5">
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+    {{ with .Params.summary }}
+      <p class="mt-2 text-lg text-neutral-500 dark:text-neutral-400">{{ . }}</p>
+    {{ end }}
+  </header>
+  <section class="prose dark:prose-invert max-w-full mt-6">
+    {{ .Content }}
+  </section>
 {{ end }}

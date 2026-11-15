@@ -1,44 +1,200 @@
 baseURL = "https://poljak-engineering.com/"
 languageCode = "en-us"
+defaultContentLanguage = "en"
 title = "Stjepan Poljak"
-theme = "PaperMod"
+theme = "blowfish"
+
+enableRobotsTXT = true
+summaryLength = 0
+enableEmoji = true
+# Keep tag names as written (x86, strace, eBPF) instead of Title Casing them.
+capitalizeListTitles = false
+
+[pagination]
+  pagerSize = 100
+
+# Post images live in static/images (they are linked as /images/... from
+# Markdown). Mount them into assets as well so Blowfish can use them as
+# feature images and thumbnails on cards.
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static/images"
+    target = "assets/images"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[related]
+  threshold = 0
+  toLower = false
+  [[related.indices]]
+    name = "series"
+    weight = 100
+  [[related.indices]]
+    name = "categories"
+    weight = 80
+  [[related.indices]]
+    name = "tags"
+    weight = 60
+  [[related.indices]]
+    name = "date"
+    weight = 10
 
 [markup]
   [markup.goldmark]
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
+      [markup.goldmark.parser.attribute]
+        block = true
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    noClasses = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
 
-[[params.socialIcons]]
-name = "github"
-url = "https://github.com/StjepanPoljak"
+# -- Menus --------------------------------------------------------------
 
-[[params.socialIcons]]
-name = "linkedin"
-url = "https://linkedin.com/in/stjepan-poljak"
+[[menu.main]]
+  name = "Projects"
+  pageRef = "projects"
+  weight = 10
 
-[[params.socialIcons]]
-name = "email"
-url = "mailto:stjepan.poljak@protonmail.com"
+[[menu.main]]
+  identifier = "writing"
+  name = "Writing"
+  pageRef = "posts"
+  weight = 20
+
+[[menu.main]]
+  name = "Hearth"
+  parent = "writing"
+  pageRef = "series/hearth"
+  weight = 21
+
+[[menu.main]]
+  name = "Emularium"
+  parent = "writing"
+  pageRef = "series/emularium"
+  weight = 22
+
+[[menu.main]]
+  name = "NVIDIA"
+  parent = "writing"
+  pageRef = "series/nvidia"
+  weight = 23
+
+[[menu.main]]
+  name = "Notes & Tutorials"
+  parent = "writing"
+  pageRef = "categories/notes"
+  weight = 24
+
+[[menu.main]]
+  name = "All posts"
+  parent = "writing"
+  pageRef = "posts"
+  weight = 25
+
+[[menu.main]]
+  name = "Contact"
+  pageRef = "contact"
+  weight = 30
+
+[[menu.footer]]
+  name = "Tags"
+  pageRef = "tags"
+  weight = 10
+
+[[menu.footer]]
+  name = "RSS"
+  url = "/index.xml"
+  weight = 20
+
+# -- Theme parameters ---------------------------------------------------
 
 [params]
+  description = "Linux kernel and hypervisor engineering: KVM, emulators, reverse engineering."
   mainSections = ["posts"]
-  showBreadCrumbs = true
-  showToc = true
-  hideFooter = true
-  [params.assets]
-    customCSS = ["css/custom.css"]
+  # Try "github", "noir", "ocean" or "terminal" for a different feel.
+  colorScheme = "slate"
+  defaultAppearance = "light"
+  autoSwitchAppearance = true
+  enableSearch = true
+  enableCodeCopy = true
+  disableImageOptimizationMD = true
+  dateFormat = "2 January 2006"
+  copyright = "© 2026 Stjepan Poljak"
 
-[[menu.main]]
-name = "Projects"
-url = "/projects/"
-weight = 1
+  [params.author]
+    name = "Stjepan Poljak"
+    image = "images/small-profile.png"
+    headline = "Linux kernel & hypervisor engineer"
+    links = [
+      { github = "https://github.com/StjepanPoljak" },
+      { linkedin = "https://linkedin.com/in/stjepan-poljak" },
+      { email = "mailto:stjepan.poljak@protonmail.com" },
+    ]
 
-[[menu.main]]
-name = "Blog"
-url = "/posts/"
-weight = 2
+  [params.header]
+    layout = "fixed-fill-blur"
 
-[[menu.main]]
-name = "Contact"
-url = "/contact/"
-weight = 3
+  [params.footer]
+    showMenu = true
+    showCopyright = true
+    showThemeAttribution = false
+    showAppearanceSwitcher = true
+    showScrollToTop = true
+
+  [params.homepage]
+    layout = "profile"
+    showRecent = true
+    showRecentItems = 5
+    showMoreLink = true
+    showMoreLinkDest = "/posts/"
+    cardView = false
+
+  [params.article]
+    showDate = true
+    showAuthor = false
+    showHero = false
+    showBreadcrumbs = true
+    showDraftLabel = true
+    seriesOpened = false
+    showHeadingAnchors = true
+    showPagination = true
+    showReadingTime = true
+    showWordCount = false
+    showTableOfContents = true
+    showTaxonomies = true
+    showRelatedContent = true
+    relatedContentLimit = 3
+
+  [params.list]
+    showBreadcrumbs = false
+    showSummary = true
+    showCards = false
+    groupByYear = true
+    cardView = false
+
+  [params.taxonomy]
+    showTermCount = true
+    cardView = false
+
+  [params.term]
+    showBreadcrumbs = true
+    showTableOfContents = false
+    groupByYear = false
+    cardView = false

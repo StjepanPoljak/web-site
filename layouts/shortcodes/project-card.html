@@ -1,4 +1,5 @@
-<a class="project-card" href="{{ .Get "link" }}">
+<a class="project-card not-prose" href="{{ .Get "link" }}">
   <div class="project-title">{{ .Get "title" }}</div>
   <div class="project-desc">{{ .Get "desc" }}</div>
+  {{ with .Get "meta" }}<div class="project-meta">{{ . }}</div>{{ end }}
 </a>

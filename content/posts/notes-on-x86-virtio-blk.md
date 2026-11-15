@@ -2,6 +2,12 @@
 title = 'Notes on X86 Virtio MMIO for a Block Device'
 date = 2026-10-15T17:33:04+02:00
 draft = false
+series = ["Hearth"]
+series_order = 9
+categories = ["Notes"]
+tags = ["Virtio", "x86", "Rust", "Block Devices"]
+featureimage = "images/notes-on-x86-virtio-blk.drawio.svg"
+summary = "Implementation notes on a Virtio MMIO block device: configuration, initialization and reading from the disk."
 +++
 
 <p align="center">

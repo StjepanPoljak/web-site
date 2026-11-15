@@ -1,0 +1,24 @@
+{{/*
+  Large project card with logo and links.
+  {{< project-feature title="…" desc="…" link="/projects/x/" image="/images/x.png"
+                      series="Hearth" github="https://github.com/…" >}}
+*/}}
+{{ $series := .Get "series" }}
+{{ $parts := 0 }}
+{{ with $series }}{{ with index site.Taxonomies.series (urlize .) }}{{ $parts = len . }}{{ end }}{{ end }}
+<div class="project-feature not-prose">
+  <a class="project-feature-image" href="{{ .Get "link" }}">
+    <img src="{{ .Get "image" }}" alt="{{ .Get "title" }}" loading="lazy">
+  </a>
+  <div class="project-feature-body">
+    <a class="project-feature-title" href="{{ .Get "link" }}">{{ .Get "title" }}</a>
+    <p class="project-feature-desc">{{ .Get "desc" | markdownify }}</p>
+    <div class="project-feature-links">
+      <a href="{{ .Get "link" }}">Overview</a>
+      {{ with $series }}
+        <a href="{{ printf "/series/%s/" (urlize .) | relURL }}">Articles{{ if $parts }} ({{ $parts }}){{ end }}</a>
+      {{ end }}
+      {{ with .Get "github" }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub</a>{{ end }}
+    </div>
+  </div>
+</div>

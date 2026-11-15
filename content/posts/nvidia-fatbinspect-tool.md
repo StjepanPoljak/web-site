@@ -2,6 +2,11 @@
 title = 'NVIDIA FatBin and Cubin Inspection with Rust'
 date = 2026-09-29T17:26:03+02:00
 draft = false
+series = ["NVIDIA"]
+series_order = 3
+tags = ["CUDA", "Reverse Engineering", "Rust", "ELF"]
+featureimage = "images/nvidia-fatbin.drawio.svg"
+summary = "fatbinspect: a Rust tool for inspecting the FatBin and Cubin containers around CUDA code."
 +++
 
 <p align="center">

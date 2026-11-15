@@ -1,6 +1,11 @@
 +++
 title = 'Porting my Rust KVM hypervisor to ARM64: Working with registers'
 date = 2026-07-03T19:26:33+02:00
+series = ["Hearth"]
+series_order = 4
+tags = ["KVM", "Rust", "ARM64", "Raspberry Pi"]
+featureimage = "images/kvm-rust-arm-part1.png"
+summary = "Porting the hypervisor to ARM64 on a Raspberry Pi 4, starting with KVM_GET_ONE_REG / KVM_SET_ONE_REG register access."
 +++
 
 ![Registers and error](/images/kvm-rust-arm-part1.png)

@@ -1,6 +1,11 @@
 +++
 title = 'Building a KVM Virtual Machine in Rust: Memory Setup'
 date = 2026-06-09T17:30:10+02:00
+series = ["Hearth"]
+series_order = 2
+tags = ["KVM", "Rust", "x86", "Memory"]
+featureimage = "images/kvm-rust-part2.drawio.svg"
+summary = "Following the strace log in Rust: KVM headers, creating a VM and setting up a guest memory region."
 +++
 
 ![Memory Diagram](/images/kvm-rust-part2.drawio.svg)

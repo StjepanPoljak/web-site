@@ -3,15 +3,6 @@ title = 'About'
 draft = false
 +++
 
-<img
-  src="/images/small-profile.png"
-  alt="Stjepan Poljak"
-  width="160"
-  style="
-    float: left;
-    margin: 0 24px 12px 0;
-    border-radius: 12px;">
-
 Linux Kernel and Hypervisor Engineer with 8 years of experience developing and
 maintaining Linux-based infrastructure in both virtual and bare-metal
 environments.
@@ -30,18 +21,16 @@ Interested in Linux kernel, hypervisor development, security and systems
 engineering roles.
 
 ## Core Expertise
-<div style="columns: 2;">
 
-<ul>
+<div class="expertise-columns">
 
-<li>Linux Kernel Internals</li>
-<li>Hypervisors and Virtualization (QEMU/KVM)</li>
-<li>Distributed Systems Debugging</li>
-<li>Reverse Engineering Skills</li>
-<li>Kernel Instrumentation (kprobes, ftrace, eBPF)</li>
-<li>Security Workflows & CVE Remediation</li>
-<li>Performance & Latency Analysis</li>
-<li>Yocto & Custom Linux Distributions</li>
-</ul>
+- Linux Kernel Internals
+- Hypervisors and Virtualization (QEMU/KVM)
+- Distributed Systems Debugging
+- Reverse Engineering Skills
+- Kernel Instrumentation (kprobes, ftrace, eBPF)
+- Security Workflows & CVE Remediation
+- Performance & Latency Analysis
+- Yocto & Custom Linux Distributions
 
 </div>

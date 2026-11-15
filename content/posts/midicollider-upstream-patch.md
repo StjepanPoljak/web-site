@@ -1,6 +1,10 @@
 +++
 title = 'How MIDICollider Led to an Upstream Linux Kernel Patch'
 date = 2026-11-04T17:20:49+01:00
+categories = ["Notes"]
+tags = ["Linux Kernel", "USB", "MIDI", "Raspberry Pi", "Upstream"]
+featureimage = "images/midicollider-kernel.png"
+summary = "How a lost USB MIDI disconnect on a Raspberry Pi instrument turned into an upstream Linux kernel patch."
 +++
 
 ![MIDICollider in Linux](/images/midicollider-kernel.png)

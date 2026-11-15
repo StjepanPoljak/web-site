@@ -2,6 +2,12 @@
 title = 'Notes on x86 PVH boot'
 date = 2026-09-25T16:26:03+02:00
 draft = false
+series = ["Hearth"]
+series_order = 8
+categories = ["Notes"]
+tags = ["KVM", "x86", "Linux Boot", "PVH"]
+featureimage = "images/notes-on-pvh-boot-vcpu.drawio.svg"
+summary = "Booting Linux on x86 through the PVH entry point: memory layout and initial register state."
 +++
 
 <p align="center">

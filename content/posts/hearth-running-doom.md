@@ -2,6 +2,11 @@
 title: "Hearth: Doom on a hand-made KVM hypervisor and a nasty I/O problem"
 date: 2026-10-24
 draft: false
+series: ["Hearth"]
+series_order: 10
+tags: ["KVM", "Rust", "x86", "VGA", "Doom", "Performance"]
+featureimage: "images/hearth.png"
+summary: "Doom as a bare-metal Hearth guest, served over VNC, and tracking down why it ran slowly."
 ---
 
 {{< youtube VKIGqQXoQYI >}}

@@ -2,6 +2,11 @@
 title = 'Summertime fun: Reviving the Tetris, Part I'
 date = 2026-09-11T17:38:34+02:00
 draft = false
+series = ["Emularium"]
+series_order = 1
+tags = ["PIC16F876", "Assembly", "Hardware", "ST7920"]
+featureimage = "images/emularium.png"
+summary = "The backstory of a fifteen-year-old Tetris device built around a PIC16F876, an ST7920 display and an IR remote."
 +++
 
 {{< youtube TQ3UTt3WZ6Y >}}

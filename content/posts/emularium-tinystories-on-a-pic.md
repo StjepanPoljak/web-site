@@ -2,6 +2,11 @@
 title = 'A Language Model on a PIC16: Emularium Tells Stories'
 date = 2026-11-14T07:00:00+01:00
 draft = true
+series = ["Emularium"]
+series_order = 3
+tags = ["PIC16F876", "Emulation", "Language Models", "KiCad", "AI Agents"]
+featureimage = "images/emularium-tinystories-lcd.png"
+summary = "A 260K-parameter TinyStories language model on an emulated PIC16F876, streaming weights from SPI EEPROMs to an LCD."
 +++
 
 ![TinyStories on the emulated LCD](/images/emularium-tinystories-lcd.png)

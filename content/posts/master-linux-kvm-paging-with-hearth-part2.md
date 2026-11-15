@@ -1,13 +1,18 @@
 +++
 title = 'Mastering KVM Page Faults with Hearth: Shadow Paging, BPF and Doom'
 date = 2026-11-06T17:50:53+01:00
+series = ["Hearth"]
+series_order = 12
+tags = ["KVM", "Paging", "Shadow Paging", "eBPF", "Linux Kernel", "Doom"]
+featureimage = "images/hearth-paging-part2.png"
+summary = "Shadow paging experiments traced with eBPF and benchmarked with Doom."
 +++
 
 ![Hearth shadow fault](/images/hearth-paging-part2.png)
 
 ## Recap
 
-In the [previous](../master-linux-kvm-paging-with-hearth-part2) article, we
+In the [previous](../master-linux-kvm-paging-with-hearth-part1) article, we
 traced page faults in the host Linux kernel to understand how TDP
 (Two-Dimensional Paging) works, specifically with Intel EPT (Extended Page
 Tables).

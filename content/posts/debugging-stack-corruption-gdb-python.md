@@ -2,6 +2,10 @@
 title = 'Automating Stack Corruption Analysis in GDB with Python'
 date = 2026-05-23T19:52:31+02:00
 draft = false
+categories = ["Notes"]
+tags = ["GDB", "Python", "Debugging", "x86", "OS Development"]
+featureimage = "images/python-gdb.png"
+summary = "Scripting GDB in Python to find an unbalanced push/pop that corrupted the stack in a hobby OS."
 +++
 
 ![Python GDB](/images/python-gdb.png)

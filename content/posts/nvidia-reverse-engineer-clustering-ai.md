@@ -2,6 +2,11 @@
 title = 'Reverse Engineering NVIDIA CUDA Binaries with Data Clustering and AI'
 date = 2026-10-05T19:19:52+02:00
 draft = false
+series = ["NVIDIA"]
+series_order = 4
+tags = ["CUDA", "Reverse Engineering", "Clustering", "AI Agents"]
+featureimage = "images/dbscan.png"
+summary = "Clustering SASS instructions by Hamming distance with DBSCAN and HDBSCAN, then handing the analysis to an AI agent."
 +++
 
 ![DBSCAN sample](/images/dbscan.png)

@@ -2,6 +2,11 @@
 title = 'Booting ARM64 Linux in my Rust KVM Hypervisor: Debugging a Memory Issue'
 date = 2026-07-13T16:57:18+02:00
 draft = false
+series = ["Hearth"]
+series_order = 6
+tags = ["KVM", "Rust", "ARM64", "Linux Boot"]
+featureimage = "images/kvm-rust-arm-linux-part1.png"
+summary = "Cross-compiling Linux, following the ARM64 boot protocol and debugging a memory issue on the way to booting it."
 +++
 
 ![Function not implemented error](/images/kvm-rust-arm-linux-part1.png)

@@ -1,0 +1,16 @@
+{{/*
+  Compact reading list for a series, in order, for use on project pages.
+  {{< series-articles "Hearth" >}}
+*/}}
+{{ $name := .Get 0 }}
+{{ with index site.Taxonomies.series (urlize $name) }}
+  <ol class="series-reading-list">
+    {{ range sort .Pages "Params.series_order" }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class="series-reading-date">{{ .Date | time.Format ":date_medium" }}</span>
+      </li>
+    {{ end }}
+  </ol>
+  <p><a href="{{ printf "/series/%s/" (urlize $name) | relURL }}">The {{ $name }} series page, with summaries and grouped by topic →</a></p>
+{{ end }}

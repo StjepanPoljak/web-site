@@ -40,6 +40,10 @@ for experimenting with computer architectures.
 - a PIC16F876 running a 260K-parameter language model from three SPI
   EEPROMs, writing stories on the LCD
 
+## Articles
+
+{{< series-articles "Emularium" >}}
+
 ## Status
 
 Experimental.

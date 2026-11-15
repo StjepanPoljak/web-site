@@ -35,6 +35,10 @@ in Rust.
 - VGA mode 13h over VNC, enough to run Doom as a bare-metal guest
 - shadow paging experiments, traced with BPF
 
+## Articles
+
+{{< series-articles "Hearth" >}}
+
 ## Status
 
 Experimental.

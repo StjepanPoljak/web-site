@@ -1,6 +1,11 @@
 +++
 title = 'Building a KVM Virtual Machine in Rust: Running a binary'
 date = 2026-06-20T07:12:33+02:00
+series = ["Hearth"]
+series_order = 3
+tags = ["KVM", "Rust", "x86"]
+featureimage = "images/kvm-rust-part3.png"
+summary = "Loading a small x86 binary into guest memory, creating a vCPU and running it under KVM."
 +++
 
 ![Memory Diagram](/images/kvm-rust-part3.png)

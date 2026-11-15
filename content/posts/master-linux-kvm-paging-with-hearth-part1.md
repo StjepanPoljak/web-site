@@ -1,6 +1,11 @@
 +++
 title = 'Mastering KVM Page Faults with Hearth: Discovering EPT with bpftrace'
 date = 2026-10-30T20:02:58+01:00
+series = ["Hearth"]
+series_order = 11
+tags = ["KVM", "Paging", "EPT", "bpftrace", "Linux Kernel"]
+featureimage = "images/hearth-paging-part1.png"
+summary = "Tracing KVM page faults with bpftrace to see how guest physical addresses map to host memory through EPT."
 +++
 
 ![Hearth page fault](/images/hearth-paging-part1.png)

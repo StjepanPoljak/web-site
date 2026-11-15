@@ -1,6 +1,11 @@
 +++
 title = 'Porting my Rust KVM hypervisor to ARM64: Running the binary'
 date = 2026-07-09T19:30:54+02:00
+series = ["Hearth"]
+series_order = 5
+tags = ["KVM", "Rust", "ARM64", "Raspberry Pi"]
+featureimage = "images/kvm-rust-arm-part2.png"
+summary = "Getting past ENOEXEC on the program counter and a missing KVM exit to run the first binary on ARM64."
 +++
 
 ![Successful binary run](/images/kvm-rust-arm-part2.png)

@@ -2,6 +2,11 @@
 title = 'Booting ARM64 Linux in my Rust KVM Hypervisor: Getting to the console with help of eBPF'
 date = 2026-09-11T18:12:32+02:00
 draft = false
+series = ["Hearth"]
+series_order = 7
+tags = ["KVM", "Rust", "ARM64", "Linux Boot", "eBPF"]
+featureimage = "images/hearth.png"
+summary = "A UART, a custom initramfs and the vGIC: getting ARM64 Linux all the way to an interactive console."
 +++
 
 <p align="center">

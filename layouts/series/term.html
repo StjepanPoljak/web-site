@@ -1,0 +1,44 @@
+{{/*
+  Series landing page: intro from content/series/<name>/_index.md, then the
+  parts in reading order (series_order), optionally split into "arcs":
+
+    arcs = [
+      { title = "Getting started on x86", from = 1, to = 3 },
+      ...
+    ]
+*/}}
+{{ define "main" }}
+  {{ .Scratch.Set "scope" "term" }}
+  <header class="mt-5">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+    <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400">
+      {{ len .Pages }} {{ cond (eq (len .Pages) 1) "part" "parts" }}
+      {{ with .Params.project }}· <a class="hover:underline" href="{{ . | relLangURL }}">project page</a>{{ end }}
+    </div>
+  </header>
+
+  {{ with .Content }}
+    <section class="mt-0 mb-8 prose dark:prose-invert max-w-prose">{{ . }}</section>
+  {{ end }}
+
+  {{ $parts := sort .Pages "Params.series_order" }}
+  {{ with .Params.arcs }}
+    {{ range . }}
+      {{ $from := .from }}{{ $to := .to }}
+      <h2 class="series-arc-title text-neutral-700 dark:text-neutral-300">{{ .title }}</h2>
+      {{ with .desc }}<p class="series-arc-desc">{{ . | markdownify }}</p>{{ else }}<div class="mb-6"></div>{{ end }}
+      <section class="space-y-10 w-full">
+        {{ range $parts }}
+          {{ if and (ge .Params.series_order $from) (le .Params.series_order $to) }}
+            {{ partial "series-part.html" . }}
+          {{ end }}
+        {{ end }}
+      </section>
+    {{ end }}
+  {{ else }}
+    <section class="space-y-10 w-full">
+      {{ range $parts }}{{ partial "series-part.html" . }}{{ end }}
+    </section>
+  {{ end }}
+{{ end }}

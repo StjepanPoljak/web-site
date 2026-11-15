@@ -2,6 +2,11 @@
 title = 'Reverse-Engineering NVIDIA: Changing a register operand'
 date = 2026-09-22T20:02:55+02:00
 draft = false
+series = ["NVIDIA"]
+series_order = 2
+tags = ["CUDA", "Reverse Engineering", "SASS"]
+featureimage = "images/nvidia-reverse2.png"
+summary = "Finding the size of an immediate and changing a register operand in a SASS instruction."
 +++
 
 ![Modifying CUDA binary](/images/nvidia-reverse2.png)
