@@ -184,6 +184,27 @@ article.text-center > section.prose { text-align: left; }
 article.text-center > section.prose h2 { margin-top: 2.5rem; }
 article.text-center > header { margin-bottom: 2rem; }
 
+/* Home header: photo on the left, name/headline/links beside it. */
+@media (min-width: 40rem) {
+  article.text-center > header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 2rem;
+    align-content: center;
+    width: 100%;
+    max-width: 56rem;
+    text-align: left;
+  }
+  article.text-center > header > img {
+    grid-row: 1 / span 3;
+    align-self: center;
+    margin-bottom: 0;
+  }
+  article.text-center > header > h1 { align-self: end; }
+  article.text-center > header > div { align-self: start; margin-top: 0.5rem; }
+}
+
 /* ---- Series landing pages ------------------------------------------- */
 
 .series-arc-title { margin: 3rem 0 0.25rem; font-size: 1.5rem; font-weight: 700; }
