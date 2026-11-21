@@ -1,5 +1,5 @@
 +++
-title = 'Mastering KVM Page Faults with Hearth: Discovering EPT with bpftrace'
+title = 'Master KVM Paging with Hearth: Discovering EPT with bpftrace'
 date = 2026-10-30T20:02:58+01:00
 series = ["Hearth"]
 series_order = 11

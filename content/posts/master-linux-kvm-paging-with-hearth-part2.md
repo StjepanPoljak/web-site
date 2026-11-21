@@ -1,5 +1,5 @@
 +++
-title = 'Mastering KVM Page Faults with Hearth: Shadow Paging, BPF and Doom'
+title = 'Master KVM Paging with Hearth: Shadow Paging, BPF and Doom'
 date = 2026-11-06T17:50:53+01:00
 series = ["Hearth"]
 series_order = 12
